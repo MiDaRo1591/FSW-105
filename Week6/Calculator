@@ -1,0 +1,67 @@
+const readline = require("readline-sync");
+const num1 = readline.question("First Number: "); // Get the first number
+var sign = readline.question("Which mathmatical sign are you using: "); // Get the sign used
+
+// if your not using the right sign just end the calculator.
+if(sign == "+" || sign == "-" || sign == "*" || sign == "/") 
+{
+    var num2 = readline.question("Second Number: "); // Second number used
+    var equals; // answer placeholder
+
+    // Use the parseInt command to convert our string input into an intiger, this also
+    // has the benifit of invalidating letters or symboles, and exporting NaN.
+
+    // Defign the functions to be used later since you can't call them untill after there made.
+    function addTogether(num1, num2)
+    {
+        var iExport = parseInt(num1) + parseInt(num2);
+
+        return iExport;
+    }
+    function subtractAppart(num1, num2)
+    {
+        var iExport = parseInt(num1) - parseInt(num2);
+
+        return iExport;
+    }
+    function multiplyTogether(num1, num2)
+    {
+        var iExport = parseInt(num1) * parseInt(num2);
+
+        return iExport;
+    }
+    function divideAppart(num1, num2)
+    {
+        var iExport = parseInt(num1) / parseInt(num2);
+
+        return iExport;
+    }
+// At this point we have 
+    if(sign === "+")
+    {
+        equals = addTogether(num1, num2);
+    }
+
+    else if(sign === "-")
+    {
+        equals = subtractAppart(num1, num2);
+    }
+
+    else if(sign === "*")
+    {
+        equals = multiplyTogether(num1, num2);
+    }
+
+    else if(sign === "/")
+    {
+        equals = divideAppart(num1, num2);
+    }
+}
+else
+{
+    equals = "Invalid Sign";
+}
+
+    console.log("");// space out the answer for easy reading
+    console.log("equals; "+equals);
+    console.log("");// space out on the bottom too
